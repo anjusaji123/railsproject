@@ -1,0 +1,12 @@
+<% if @products.blank? %>
+<p>There are not any products currently in the system.</p>
+<% else %>
+<p>These are the current products in our system</p>
+
+<ul id = "Products">
+   <% @products.each do |c| %>
+   <li><%= link_to c.name, {:action => 'show', :id => c.id} -%></li>
+   <% end %>
+</ul>
+
+<% end %>

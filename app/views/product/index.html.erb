@@ -1,0 +1,37 @@
+
+
+<html>
+<head>
+
+
+
+</head>
+
+
+<body>
+
+
+<table  cellspacing="2"  bgcolor="white" border="2"  align="center" cellpadding="5">
+<tr>
+	<th> Name </th>
+	<th> Category </th>
+	<th> Description</th>
+	<th> Brand</th>
+  <th> Price</th>
+
+</tr>
+<%@products.each do |w|%>
+<tr>
+	<td><%=w.name%></td>
+	<td><%=w.category%></td>
+	<td><%=w.description%></td>
+  <td><%=w.brand%></td>
+  <td><%=w.price%></td>
+
+
+</tr>
+<% end %>
+</table>
+
+</body>
+<html/>

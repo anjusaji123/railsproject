@@ -1,0 +1,33 @@
+.left
+{
+background-color:black;
+width: 95%;
+height	:85%;
+border-radius: 5%;
+margin-left:50px;
+margin-top:100px;
+}
+table
+{
+color:#764318;
+width:100%;
+height:800px;
+margin-top:50px;
+border-radius :15px;
+border: 5px solid black;
+}
+tr
+{
+font-size:20px;
+}
+
+body
+{
+
+	background-color:#764318;
+
+}
+	#text
+{
+height:50px;
+}
