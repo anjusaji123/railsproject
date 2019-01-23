@@ -1,0 +1,18 @@
+development:
+  cloud_name: db0o84er1
+  api_key: '235216156665252'
+  api_secret: 28R-hMKNNWZgJKm6uDDovskl7FQ
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: db0o84er1
+  api_key: '235216156665252'
+  api_secret: 28R-hMKNNWZgJKm6uDDovskl7FQ
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: db0o84er1
+  api_key: '235216156665252'
+  api_secret: 28R-hMKNNWZgJKm6uDDovskl7FQ
+  enhance_image_tag: true
+  static_file_support: false

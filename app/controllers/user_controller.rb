@@ -3,6 +3,7 @@ skip_before_action :verify_authenticity_token
 
 
   def signup
+
     name= params["name"]
     email= params["email"]
     pwd=params["psw"]
@@ -14,8 +15,10 @@ skip_before_action :verify_authenticity_token
           }.to_json
     else
     User.create(:name => name , :email => email,:password => pwd, :phonenumber =>pno)
-
-    render json: {
+  # MailerJob.perform_now(email)
+    RegistrationWorker.perform_async(email)
+   Registration2Worker.perform_async(email)
+   render json: {
           status: 200,
           response: "Data saved successfully"
         }.to_json
@@ -29,22 +32,26 @@ def login
      pwd=params["psw"]
      if User.find_by_email(email)
        if pwd == User.find_by_email(email).password
-         render json: {
+          @id = User.find_by_email(email).id
+          puts"heloooooo"
+         render json:
+             {
                status: 200,
-               response: "successfully logined"
+               response: "successfully logined",
+               id:    @id
              }.to_json
 
        else
          render json: {
-               status: 200,
-               response: "failed"
+               status: 401,
+               response: "invalid password"
              }.to_json
 
        end
 
     else
       render json: {
-            status: 200,
+            status: 402,
             response: "user does not exist"
           }.to_json
   end
